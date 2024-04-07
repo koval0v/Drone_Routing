@@ -1,0 +1,28 @@
+.general-container {
+  min-height: 75vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--dark-blue);
+}
+
+.list-item {
+  background-color: var(--light-grey);
+  margin: 15px 0px;
+  padding: 10px 5px;
+  border: 2px solid var(--light-grey);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-item-icon {
+  color: white;
+  background-color: var(--blue);
+  margin: 5px 10px;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}

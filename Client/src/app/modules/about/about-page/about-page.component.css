@@ -1,0 +1,120 @@
+
+.form-button {
+  display: flex;
+  justify-content: center;
+}
+
+.general-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin: 2% 5%;
+}
+
+.settings-form, .stage-display {
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  background-color: var(--white);
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  padding: 20px 10px;
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--dark-blue);
+  max-height: 245px;
+}
+
+.save-button {
+  text-align: center;
+  color: var(--white);
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 80%;
+  height: 35px;
+  background-color: var(--light-blue);
+  border-radius: 25px;
+  border: 1px solid var(--light-blue);
+  padding: 5px 0px;
+  cursor: pointer;
+}
+
+.stage-info {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-left: 4%;
+}
+
+.stage-name {
+  min-height: 7vh;
+  height: 8%;
+  text-align: right;
+  color: var(--light-grey);
+  padding-bottom: 5px;
+}
+
+.stage-display {
+  height: 92%;
+  padding: 2% 3%;
+}
+
+.tabs-navigation {
+  min-height: 30vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  width: 90%;
+}
+
+li a {
+  display: block;
+  color: var(--blue);
+  text-align: center;
+  padding: 6px 13px;
+  text-decoration: none;
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: 3px solid var(--blue);
+  border-radius: 30px;
+  margin: 10px 5px;
+}
+
+li a:hover:not(.active) {
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--orange);
+  color: var(--white) !important;
+  border-color: var(--orange) !important;
+}
+
+.icon {
+  margin-right: 5px;
+}

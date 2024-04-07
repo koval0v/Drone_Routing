@@ -1,0 +1,24 @@
+h1, h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+h4 {
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-weight: 500;
+  font-size: 18px;
+}

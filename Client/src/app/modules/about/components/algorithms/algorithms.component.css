@@ -1,0 +1,26 @@
+.general-container {
+  min-height: 75vh;
+  padding: 15px;
+}
+
+.description {
+  padding: 15px 5px;
+  overflow-y: auto;
+  max-height: 400px;
+  color: var(--dark-blue);
+  white-space: pre-line;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--grey);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 50px;
+}

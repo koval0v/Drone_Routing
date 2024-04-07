@@ -1,0 +1,15 @@
+<div id="chart" *ngIf="chartOptions != undefined">
+  <apx-chart *ngIf="chartOptions.chart != undefined && chartOptions.series != undefined && chartOptions.dataLabels != undefined
+    && chartOptions.title != undefined && chartOptions.plotOptions != undefined && chartOptions.xaxis != undefined
+    && chartOptions.yaxis != undefined && chartOptions.grid && chartOptions.colors != undefined"
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [dataLabels]="chartOptions.dataLabels"
+    [title]="chartOptions.title"
+    [plotOptions]="chartOptions.plotOptions"
+    [xaxis]="chartOptions.xaxis"
+    [yaxis]="chartOptions.yaxis"
+    [grid]="chartOptions.grid"
+    [colors]="chartOptions.colors"
+  ></apx-chart>
+</div>

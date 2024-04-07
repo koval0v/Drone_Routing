@@ -1,0 +1,14 @@
+<ul>
+  <li><a [ngClass]="{active: type === undefined}"
+    (click)="changeSection(undefined)">Загальне</a></li>
+  <li><a [ngClass]="{active: type === TheNearestNeighbourTypes.Standard}"
+    (click)="changeSection(TheNearestNeighbourTypes.Standard)">Найближчий сусід</a></li>
+  <li><a [ngClass]="{active: type === TheNearestNeighbourTypes.InTheArea}"
+    (click)="changeSection(TheNearestNeighbourTypes.InTheArea)">Найближчий сусід в межах ділянки</a></li>
+  <li><a [ngClass]="{active: type === TheNearestNeighbourTypes.Parallel}"
+    (click)="changeSection(TheNearestNeighbourTypes.Parallel)">Паралельний найближчий сусід</a></li>
+  <li><a [ngClass]="{active: type === TheNearestToTheLineTypes.OrderingByX}"
+    (click)="changeSection(TheNearestToTheLineTypes.OrderingByX)">Найближча точка до прямої за координатою Х</a></li>
+  <li><a [ngClass]="{active: type === TheNearestToTheLineTypes.OrderingByDistances}"
+    (click)="changeSection(TheNearestToTheLineTypes.OrderingByDistances)">Найближча точка до прямої за матрицею відстаней</a></li>
+</ul>

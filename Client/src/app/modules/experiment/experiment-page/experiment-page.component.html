@@ -1,0 +1,194 @@
+<div class="general-container">
+  <div class="settings-form">
+    <div class="form-title"><h2>Налаштування</h2></div>
+    <form #settingsForm="ngForm">
+      <div class="form-section">
+        <div class="form-section-title">Загальні</div>
+        <div class="form-group">
+          <label for="tasksQuantity">Кількість задач</label>
+          <input class="form-control" [(ngModel)]="settings.tasksQuantity" name="tasksQuantity"
+            type="number" required #tasksQuantity="ngModel" min="1" [disabled]="experimentIsProcessing"
+            (change)="onTasksChanged(tasksQuantity.value, $event.target)" pattern="\d*"/>
+        </div>
+        <div class="form-group">
+          <label for="targetsQuantity">Кількість об'єктів</label>
+          <input class="form-control" [(ngModel)]="settings.targetsQuantity" name="targetsQuantity"
+            type="number" required #targetsQuantity="ngModel" min="1" [disabled]="experimentIsProcessing"
+            (change)="onTargetsChanged(targetsQuantity.value, $event.target)" pattern="\d*"/>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Параметри дрона</div>
+        <div class="form-group">
+          <label for="time">Час польоту (год)</label>
+          <input class="form-control" [(ngModel)]="settings.timeResource" name="time"
+            type="number" required #time="ngModel" min="1" [disabled]="experimentIsProcessing"
+            (change)="onTimeChanged(time.value, $event.target)"/>
+        </div>
+        <div class="form-group">
+          <label for="speed">Швидкість (км/год)</label>
+          <input class="form-control" [(ngModel)]="settings.averageSpeed" name="speed"
+            type="number" required #speed="ngModel" min="1" [disabled]="experimentIsProcessing"
+            (change)="onSpeedChanged(speed.value, $event.target)"/>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-group form-group-checkbox">
+          <input class="form-control checkbox-control" [(ngModel)]="settings.distributionIsUniform" name="distribution"
+            type="checkbox" #distribution="ngModel" [disabled]="experimentIsProcessing"/>
+          <label for="distribution">Рівномірний розподіл</label>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Межі мапи та генерування об'єктів</div>
+        <div class="form-section-row">
+          <div class="form-group form-group-column">
+            <label for="settings.General.xRange" class="input-label-center">Вісь X</label>
+            <div>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.General.xRange.startCoordinate"
+              name="generalXStart" type="number" #generalXStart="ngModel" disabled/>
+              <label class="range-separator">...</label>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.General.xRange.endCoordinate"
+              name="generalXEnd" type="number" min="1" required #generalXEnd="ngModel" [disabled]="experimentIsProcessing"
+              (change)="changeMapChart(settingsForm)"/>
+            </div>
+          </div>
+          <div class="form-group form-group-column">
+            <label for="settings.General.yRange" class="input-label-center">Вісь Y</label>
+            <div>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.General.yRange.startCoordinate" name="generalYStart"
+              type="number" #generalYStart="ngModel" disabled/>
+              <label class="range-separator">...</label>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.General.yRange.endCoordinate" name="generalYEnd"
+              type="number" min="1" required #generalYEnd="ngModel" [disabled]="experimentIsProcessing"
+              (change)="changeMapChart(settingsForm)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Межі генерування початкової бази</div>
+        <div class="form-section-row">
+          <div class="form-group form-group-column">
+            <label for="settings.StartBase.xRange" class="input-label-center">Вісь X</label>
+            <div>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.StartBase.xRange.startCoordinate"
+              name="startXStart" type="number" #startXStart="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"/>
+              <label class="range-separator" required>...</label>
+            <input class="form-control form-control-coordinates" [(ngModel)]="settings.StartBase.xRange.endCoordinate"
+              name="startXEnd" type="number" required #startXEnd="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"
+              [min]="settings.StartBase.xRange.startCoordinate + 1" [max]="settings.General.xRange.endCoordinate"/>
+            </div>
+          </div>
+          <div class="form-group form-group-column">
+            <label for="settings.StartBase.yRange" class="input-label-center">Вісь Y</label>
+            <div>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.StartBase.yRange.startCoordinate"
+              name="startYStart" type="number" #startYStart="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"/>
+              <label class="range-separator" required>...</label>
+            <input class="form-control form-control-coordinates" [(ngModel)]="settings.StartBase.yRange.endCoordinate"
+              name="startYEnd" type="number" required #startYEnd="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"
+              [min]="settings.StartBase.yRange.startCoordinate + 1" [max]="settings.General.yRange.endCoordinate"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Межі генерування кінцевої бази</div>
+        <div class="form-section-row">
+          <div class="form-group form-group-column">
+            <label for="settings.EndBase.xRange" class="input-label-center">Вісь X</label>
+            <div>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.EndBase.xRange.startCoordinate"
+              name="endXStart" type="number" #endXStart="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"/>
+              <label class="range-separator" required>...</label>
+            <input class="form-control form-control-coordinates" [(ngModel)]="settings.EndBase.xRange.endCoordinate"
+              name="endXEnd" type="number" required #endXEnd="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"
+              [min]="settings.EndBase.xRange.startCoordinate + 1" [max]="settings.General.xRange.endCoordinate"/>
+            </div>
+          </div>
+          <div class="form-group form-group-column">
+            <label for="settings.EndBase.yRange" class="input-label-center">Вісь Y</label>
+            <div>
+              <input class="form-control form-control-coordinates" [(ngModel)]="settings.EndBase.yRange.startCoordinate"
+              name="endYStart" type="number" #endYStart="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"/>
+              <label class="range-separator" required>...</label>
+            <input class="form-control form-control-coordinates" [(ngModel)]="settings.EndBase.yRange.endCoordinate"
+              name="endYEnd" type="number" required #endYEnd="ngModel" [disabled]="experimentIsProcessing" (change)="changeMapChart(settingsForm)"
+              [min]="settings.EndBase.yRange.startCoordinate + 1" [max]="settings.General.yRange.endCoordinate"/>
+            </div>
+          </div>
+        </div>
+        <div class="errors-container">
+          <div *ngIf="tasksQuantity.errors?.['required'] && tasksQuantity.touched" class="error">
+            Кількість задач є обов'язковою.
+          </div>
+          <div *ngIf="tasksQuantity.errors?.['min'] && tasksQuantity.touched" class="error">
+            Кількість задач повинна бути невід'ємна.
+          </div>
+          <div *ngIf="tasksQuantity.errors?.['pattern'] && tasksQuantity.touched" class="error">
+            Кількість задач має бути цілим числом.
+          </div>
+          <div *ngIf="targetsQuantity.errors?.['required'] && targetsQuantity.touched" class="error">
+            Кількість об'єктів є обов'язковою.
+          </div>
+          <div *ngIf="targetsQuantity.errors?.['min'] && targetsQuantity.touched" class="error">
+            Кількість об'єктів повинна бути невід'ємна.
+          </div>
+          <div *ngIf="targetsQuantity.errors?.['pattern'] && targetsQuantity.touched" class="error">
+            Кількість об'єктів має бути цілим числом.
+          </div>
+          <div *ngIf="time.errors?.['required'] && time.touched" class="error">
+            Час польоту є обов'язковим.
+          </div>
+          <div *ngIf="time.errors?.['min'] && time.touched" class="error">
+            Час польоту повинен бути невід'ємним.
+          </div>
+          <div *ngIf="speed.errors?.['required'] && speed.touched" class="error">
+            Швидкість є обов'язковою.
+          </div>
+          <div *ngIf="speed.errors?.['min'] && speed.touched" class="error">
+            Швидкість повинна бути невід'ємною.
+          </div>
+          <div *ngIf="(generalXEnd.errors?.['min'] && generalXEnd.touched) ||
+              (generalYEnd.errors?.['min'] && generalYEnd.touched)" class="error">
+            Координата повинна бути невід'ємною.
+          </div>
+          <div *ngIf="(startXEnd.errors?.['min'] && startXEnd.touched) ||
+            (startYEnd.errors?.['min'] && startYEnd.touched) ||
+            (endXEnd.errors?.['min'] && endXEnd.touched) ||
+            (endYEnd.errors?.['min'] && endYEnd.touched)"
+            class="error">
+            Кінцева координата повинна бути більшою.
+          </div>
+          <div *ngIf="(startXEnd.errors?.['max'] && startXEnd.touched) ||
+            (startYEnd.errors?.['max'] && startYEnd.touched) ||
+            (endXEnd.errors?.['max'] && endXEnd.touched) ||
+            (endYEnd.errors?.['max'] && endYEnd.touched)"
+            class="error">
+            Межі для баз не повинні перевищувати межі мапи.
+        </div>
+        </div>
+      </div>
+      <div class="form-button">
+        <ng-container *ngIf="experimentIsProcessed; else settingsPageButton">
+          <button class="save-button"
+            (click)="newExperiment()">Новий експеримент</button>
+        </ng-container>
+        <ng-template #settingsPageButton>
+          <button [disabled]="settingsForm.invalid || experimentIsProcessing" class="save-button"
+            (click)="launchExperiment()">Запустити експеримент</button>
+        </ng-template>
+      </div>
+  </form>
+  </div>
+  <div class="stage-info">
+    <div class="stage-name">
+      <h4 class="main-page-btn" (click)="redirectToMainPage()">До головного меню</h4>
+      <h1>{{ stageTitle }}</h1>
+    </div>
+    <div class="stage-display">
+      <router-outlet (activate)="onOutletLoaded($event)"></router-outlet>
+    </div>
+  </div>
+</div>

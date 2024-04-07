@@ -1,0 +1,15 @@
+<div id="chart" *ngIf="chartOptions != undefined">
+  <apx-chart *ngIf="chartOptions.chart != undefined && chartOptions.series != undefined && chartOptions.responsive != undefined
+    && chartOptions.colors != undefined && chartOptions.legend != undefined && chartOptions.stroke != undefined
+    && chartOptions.dataLabels != undefined && chartOptions.title != undefined"
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [labels]="chartOptions.labels"
+    [responsive]="chartOptions.responsive"
+    [colors]="chartOptions.colors"
+    [legend]="chartOptions.legend"
+    [stroke]="chartOptions.stroke"
+    [dataLabels]="chartOptions.dataLabels"
+    [title]="chartOptions.title"
+  ></apx-chart>
+</div>

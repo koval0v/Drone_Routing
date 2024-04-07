@@ -1,0 +1,27 @@
+::ng-deep .apexcharts-tooltip {
+  font-size: '12px';
+  font-family: 'Harmonia Sans Pro Cyr';
+}
+
+.settings-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+  color: var(--dark-blue);
+  font-weight: 400;
+}
+
+.warning-icon {
+  height: 20%;
+}
+
+.icon {
+  color: var(--blue);
+  font-size: 5rem;
+}

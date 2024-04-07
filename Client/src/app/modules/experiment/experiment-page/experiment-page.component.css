@@ -1,0 +1,208 @@
+.general-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin: 2% 5%;
+  /*background-color: rgb(240, 52, 6);*/
+}
+
+.settings-form, .stage-display {
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  background-color: var(--white);
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  padding: 20px 10px;
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--dark-blue);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3px 0;
+}
+
+.form-group-column {
+  flex-direction: column;
+}
+
+.form-group-checkbox {
+  justify-content: space-evenly;
+}
+
+.form-title, .form-section-title {
+  text-align: center;
+}
+
+.form-section-title {
+  color: var(--dark-grey);
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+.form-section-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-control {
+  max-width: 60px;
+  min-width: 30px !important;
+  border-radius: 30px;
+  border: 3px solid var(--silver-blue);
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--dark-blue);
+  padding: 2px 3px;
+  text-align: center;
+}
+
+.form-control:disabled {
+  background-color: var(--grey);
+  color: var(--silver-blue);
+}
+
+.form-control-coordinates {
+  max-width: 30px;
+}
+
+input.form-control {
+  height: 18px;
+  min-width: 18px;
+}
+
+.input-label-center {
+  text-align: center;
+}
+
+.range-separator {
+  padding: 0 5px;
+}
+
+.checkbox-control, .checkbox-control:checked {
+	appearance: none;
+  border: 3px solid var(--silver-blue);
+  border-radius: 5px;
+  min-width: 18px !important;
+}
+
+.checkbox-control:hover {
+	cursor: pointer;
+}
+
+.checkbox-control:checked {
+	background-color: var(--dark-blue);
+}
+
+.error {
+  color: red;
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 7px;
+  margin-top: 5px;
+}
+
+.errors-container {
+  min-height: 22px;
+  max-height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 2px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+  text-align: center;
+  color: var(--white);
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 80%;
+  height: 35px;
+  background-color: var(--orange);
+  border-radius: 25px;
+  border: 1px solid var(--orange);
+  padding: 5px 0px;
+  cursor: pointer;
+}
+
+.save-button:disabled {
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
+  opacity: 70%;
+  cursor: default;
+}
+
+.stage-info {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-left: 4%;
+}
+
+.stage-name {
+  height: 8%;
+  text-align: right;
+  color: var(--light-grey);
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stage-display {
+  height: 92%;
+  padding: 2% 3%;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border-color: red;
+  color: red;
+}
+
+.main-page-btn {
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 4px 12px;
+  background-color: white;
+  color: var(--light-blue);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main-page-btn:hover {
+  background-color: var(--light-blue);
+  color: white;
+}

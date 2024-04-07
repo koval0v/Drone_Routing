@@ -1,0 +1,20 @@
+.general-container {
+  min-height: 75vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  color: var(--dark-blue);
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: var(--light-grey);
+  padding: 5px 6px;
+  border-radius: 30px;
+  margin-right: 30px;
+}
+
+.form img {
+  max-height: 73vh;
+}

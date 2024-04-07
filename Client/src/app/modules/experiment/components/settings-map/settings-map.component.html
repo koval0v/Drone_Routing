@@ -1,0 +1,14 @@
+<ng-container *ngIf="isValidForm; else invalidSettings">
+  <app-rangebar-map [chartOptions]="mapChartOptions" id="mapChart"></app-rangebar-map>
+</ng-container>
+<ng-template #invalidSettings>
+  <div class="settings-message">
+    <div class="warning-icon">
+      <div class="icon"><i class="fa-solid fa-circle-exclamation fa-fw"></i></div>
+    </div>
+    <div class="title">
+      <h2>Для відображення мапи, будь ласка,<br>введіть коректні вхідні дані</h2>
+    </div>
+  </div>
+
+</ng-template>

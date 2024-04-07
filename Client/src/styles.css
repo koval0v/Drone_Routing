@@ -1,0 +1,37 @@
+@import url(color-variables.css);
+@import url(text-fonts.css);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--light-blue) 0%,
+    var(--light-blue) 33%,
+    var(--grey) 33%,
+    var(--grey) 100%
+  );
+  /*background-repeat: no-repeat;
+  background-attachment: fixed;*/
+}
+
+/*body {
+  height: 90%;
+}*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*input[type="checkbox"] {
+  appearance:none;
+  -webkit-appearance:none;
+}*/
+

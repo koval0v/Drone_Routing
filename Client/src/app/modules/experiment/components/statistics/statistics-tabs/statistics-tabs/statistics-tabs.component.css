@@ -1,0 +1,38 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: var(--blue);
+  text-align: center;
+  padding: 6px 16px;
+  text-decoration: none;
+  font-family: 'Harmonia Sans Pro Cyr';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: 3px solid var(--blue);
+  border-radius: 30px;
+  margin: 5px 3px;
+}
+
+li a:hover:not(.active) {
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--orange);
+  color: var(--white) !important;
+  border-color: var(--orange) !important;
+}

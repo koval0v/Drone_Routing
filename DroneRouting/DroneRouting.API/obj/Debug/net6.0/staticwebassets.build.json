@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6FV1tKgH7/i4/B37zo2mAzH8jDFAmNdXY+taaIVQ394=",
+  "Source": "DroneRouting.API",
+  "BasePath": "_content/DroneRouting.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

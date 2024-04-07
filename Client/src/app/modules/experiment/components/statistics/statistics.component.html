@@ -1,0 +1,100 @@
+<div class="tabs">
+  <app-statistics-tabs (changeSectionEvent)="changeSection($event)"></app-statistics-tabs>
+</div>
+<div class="general-stat">
+  <div class="statistics">
+    <ng-container *ngIf="type == undefined; else particularAlgo">
+      <div class="statistics-row">
+        <div class="diagram">
+          <app-pie-chart [chartOptions]="targetsPieOptions"></app-pie-chart>
+        </div>
+        <div class="block">
+          <div class="block-title">Час роботи алгоритму</div>
+          <div class="block-title block-title-bold block-title-time">
+            <span class="time-name">Мінімум</span>
+            <span class="block-number time-text time-text-non-avg">{{ statistics.minExecutionTime | number : '1.2-2' }}
+              <span class="base-quantity time-text-non-avg">мс</span></span>
+            <div class="method-name">{{ statistics.minExecutionTimeMethodName }}</div>
+          </div>
+          <div class="block-title block-title-bold block-title-time title-time-avg">
+            <span class="time-name">Середнє</span>
+            <span class="block-number time-text">{{ statistics.avgExecutionTime | number : '1.2-2' }}
+              <span class="base-quantity">мс</span></span>
+            <div class="method-name">{{ statistics.avgExecutionTimeMethodName }}</div>
+          </div>
+          <div class="block-title block-title-bold block-title-time">
+            <span class="time-name">Максимум</span>
+            <span class="block-number time-text time-text-non-avg">{{ statistics.maxExecutionTime | number : '1.2-2' }}
+              <span class="base-quantity time-text-non-avg">мс</span></span>
+            <div class="method-name">{{ statistics.maxExecutionTimeMethodName }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="statistics-row">
+        <div class="block small-block">
+          <div class="block-title">Середня к-ть об'єктів маршруту</div>
+          <div class="block-number">{{ statistics.averageTargetsCount | number: '1.0-0' }}</div>
+          <div class="block-title block-title-bold">{{ maxTargetsPercent | number: '1.0-0' }}% максимально можливої кількості</div>
+        </div>
+        <div class="block small-block">
+          <div class="block-title">Середня довжина маршруту</div>
+          <div class="block-number">{{ statistics.averageDistance | number: '1.0-0' }}<span class="base-quantity">км</span></div>
+          <div class="block-title block-title-bold">{{ maxDistancePercent | number: '1.0-0' }}% максимально можливої довжини</div>
+        </div>
+        <div class="diagram">
+          <app-pie-chart [chartOptions]="targetsDistancePieOptions"></app-pie-chart>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #particularAlgo>
+      <div class="statistics-row big-statistics-row">
+        <div class="diagram big-diagram">
+          <app-columns [chartOptions]="columnOptionsExecutionTime"></app-columns>
+        </div>
+        <div class="block smaller-block">
+          <div class="block-title">Середнє відхилення</div>
+          <div class="block-number" *ngIf="deviations != undefined">{{ deviations.theBestResultDeviation | number : '1.2-2' }}</div>
+          <div class="block-title block-title-bold">Від найкращого результату</div>
+          <div class="block-number" *ngIf="deviations != undefined">{{ deviations.commonAverageDeviation | number : '1.2-2' }}</div>
+          <div class="block-title block-title-bold">Від середнього значення</div>
+        </div>
+      </div>
+      <div class="statistics-row big-statistics-row">
+        <div class="block smaller-block">
+          <div class="block-title">Найкращий результат, разів</div>
+          <div class="block-number" *ngIf="deviations != undefined">{{ theBestOnlyTargets | number : '1.0-0' }}</div>
+          <div class="block-title block-title-bold">Лише по к-ті об'єктів</div>
+          <div class="block-number" *ngIf="deviations != undefined">{{ theBestTargetsDistance | number : '1.0-0' }}</div>
+          <div class="block-title block-title-bold">По к-ті об'єктів та довжині маршруту</div>
+        </div>
+        <div class="diagram big-diagram">
+          <app-columns [chartOptions]="columnOptionsTargetsCount" id="columnsDiagram"></app-columns>
+        </div>
+      </div>
+      <div class="statistics-row big-statistics-row">
+        <div class="block smaller-block">
+          <div class="block-title">Найгірший результат, разів</div>
+          <div class="block-number" *ngIf="deviations != undefined">{{ theWorstOnlyTargets | number : '1.0-0' }}</div>
+          <div class="block-title block-title-bold">Лише по к-ті об'єктів</div>
+          <div class="block-number" *ngIf="deviations != undefined">{{ theWorstTargetsDistance | number : '1.0-0' }}</div>
+          <div class="block-title block-title-bold">По к-ті об'єктів та довжині маршруту</div>
+        </div>
+        <div class="diagram big-diagram">
+          <app-columns [chartOptions]="columnOptionsDistance" id="columnsDiagram"></app-columns>
+        </div>
+      </div>
+      <div class="statistics-row big-statistics-row">
+        <div class="diagram big-diagram">
+          <app-columns [chartOptions]="columnOptionsTargetsDynamic"></app-columns>
+        </div>
+        <div class="block smaller-block">
+          <div class="block-title">Середнє квадратичне відхилення</div>
+          <div class="block-number" *ngIf="squareDeviations != undefined">{{ squareDeviations.theBestResultDeviation | number : '1.2-2' }}</div>
+          <div class="block-title block-title-bold">Від найкращого результату</div>
+          <div class="block-number" *ngIf="squareDeviations != undefined">{{ squareDeviations.commonAverageDeviation | number : '1.2-2' }}</div>
+          <div class="block-title block-title-bold">Від середнього значення</div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

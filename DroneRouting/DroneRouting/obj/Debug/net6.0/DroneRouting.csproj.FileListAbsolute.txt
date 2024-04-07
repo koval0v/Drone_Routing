@@ -1,0 +1,12 @@
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\bin\Debug\net6.0\DroneRouting.deps.json
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\bin\Debug\net6.0\DroneRouting.dll
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\bin\Debug\net6.0\DroneRouting.pdb
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\DroneRouting.csproj.AssemblyReference.cache
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\DroneRouting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\DroneRouting.AssemblyInfoInputs.cache
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\DroneRouting.AssemblyInfo.cs
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\DroneRouting.csproj.CoreCompileInputs.cache
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\DroneRouting.dll
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\refint\DroneRouting.dll
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\DroneRouting.pdb
+C:\Users\UserPc\Desktop\4course\8sem\Diploma\Application\DroneRouting\DroneRouting\obj\Debug\net6.0\ref\DroneRouting.dll

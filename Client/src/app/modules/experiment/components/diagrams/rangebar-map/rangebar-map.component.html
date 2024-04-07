@@ -1,0 +1,17 @@
+<div id="chart" *ngIf="chartOptions != undefined">
+  <apx-chart *ngIf="chartOptions.chart != undefined && chartOptions.series != undefined && chartOptions.xaxis != undefined
+    && chartOptions.yaxis != undefined && chartOptions.plotOptions != undefined && chartOptions.title != undefined
+    && chartOptions.legend != undefined && chartOptions.fill != undefined && chartOptions.tooltip != undefined
+    && chartOptions.markers != undefined"
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [yaxis]="chartOptions.yaxis"
+    [plotOptions]="chartOptions.plotOptions"
+    [title]="chartOptions.title"
+    [legend]="chartOptions.legend"
+    [fill]="chartOptions.fill"
+    [tooltip]="chartOptions.tooltip"
+    [markers]="chartOptions.markers"
+  ></apx-chart>
+</div>

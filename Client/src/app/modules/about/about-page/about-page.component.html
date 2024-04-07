@@ -1,0 +1,26 @@
+<div class="general-container">
+  <div class="settings-form">
+    <div class="tabs-navigation">
+      <ul>
+        <li><a [ngClass]="{active: this.router.url.includes('general')}"
+          (click)="changeInfoSection('general')">Загальна інформація</a></li>
+        <li><a [ngClass]="{active: this.router.url.includes('algorithms')}"
+          (click)="changeInfoSection('algorithms')">Опис алгоритмів</a></li>
+        <li><a [ngClass]="{active: this.router.url.includes('structure')}"
+          (click)="changeInfoSection('structure')">Структура експериментів</a></li>
+      </ul>
+    </div>
+    <div class="form-button">
+      <button class="save-button" (click)="openExperimentPage()"><span class="icon">
+        <i class="fa-solid fa-gear fa-sm"></i></span>Провести експеримент</button>
+    </div>
+  </div>
+  <div class="stage-info">
+    <div class="stage-name">
+      <h3>{{ stageTitle }}</h3>
+    </div>
+    <div class="stage-display">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
